@@ -10,7 +10,7 @@
 </head>
 <h1>New Game</h1>
 <body>
-	<form method=post action="WelcomeServlet">
+	<form method=post action="JeuxServlet">
 		<div>
 			<label for=" name">Titre :</label> <input type="text" id="nom"
 				name="nom">

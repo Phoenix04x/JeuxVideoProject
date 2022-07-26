@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Formulaire</title>
 </head>
 <body>
-
+<form method=post action="JeuxServlet">
+		<div>
+			<label for=" name">Titre :</label> <input type="text" id="Titre"
+				name="titre">
+		</div>
+		<div>
+			<label for="name">Description :</label> <input type="text" id="description"
+				name="Description">
 </body>
 </html>
