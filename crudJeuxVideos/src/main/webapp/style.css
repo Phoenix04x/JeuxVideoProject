@@ -1,0 +1,35 @@
+.wrapper {
+
+    display: grid;
+    grid-template-columns:25% 50% 25%;
+    grid-template-rows: 25% 25% 50%;
+}
+
+h1 {
+    background-color: beige;
+    text-align: center;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    position: relative;
+}
+
+.search_bar{
+    text-align: center;
+    grid-column-start: 2;
+}
+
+.Trie{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+.liste_jeux{
+    text-align: center;
+    align-items: center;
+    grid-column-start: 2;
+    grid-row-start: 3;
+
+}
+.form{
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
