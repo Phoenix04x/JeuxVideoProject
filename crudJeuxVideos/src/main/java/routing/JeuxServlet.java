@@ -5,7 +5,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Jeux;
+
 import java.io.IOException;
+import java.util.ArrayList;
+
+import db.JeuxDB;
 
 /**
  * Servlet implementation class JeuxServlet
@@ -27,6 +32,8 @@ public class JeuxServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		//response.getWriter().append("Served at: ").append(req:uest.getContextPath());
+		ArrayList<Jeux> jeux = JeuxDB.getJeux();
+		request.setAttribute("data", jeux);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/NewJeux.jsp").forward(request, response);
 	}
 

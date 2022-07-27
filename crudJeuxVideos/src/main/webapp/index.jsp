@@ -42,11 +42,13 @@
             </select>
         </div>
         <div class="liste_jeux">
-            <ul>
-                <li>
-                    <span></span>
-                </li>
-            </ul>
+            <c:forEach items="${data}" var="jeux">
+                <tr>
+                    <td>Jeux :
+                        <c:out value="${jeux}" />
+                    </td>
+                </tr>
+            </c:forEach>
         </div>
         <div class="form">
             <a href="JeuxServlet"><button>Ajouter un jeu</button></a><br>

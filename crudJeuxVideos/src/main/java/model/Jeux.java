@@ -82,5 +82,12 @@ public class Jeux implements Serializable{
 	public void setActif(boolean actif) {
 		this.actif = actif;
 	}
+	@Override
+	public String toString() {
+		return "Jeux [Jeux_Titre=" + Jeux_Titre + ", Jeux_Description=" + Jeux_Description + ", Jeux_Prix=" + Jeux_Prix
+				+ ", Jeux_DateSortie=" + Jeux_DateSortie + ", Jeux_PaysOrigine=" + Jeux_PaysOrigine
+				+ ", Jeux_Connexion=" + Jeux_Connexion + ", Jeux_Mode=" + Jeux_Mode + ", Genre_Id=" + Genre_Id
+				+ ", actif=" + actif + "]";
+	}
 
 }
