@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/WEB-INF/style.css">
 <title>Formulaire</title>
 </head>
 <h1>New Genre</h1>
