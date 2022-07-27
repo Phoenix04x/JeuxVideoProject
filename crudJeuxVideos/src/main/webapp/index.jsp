@@ -37,6 +37,7 @@
     <option value="PS4">PS4</option>
     <option value="One">One</option>
     <option value="Switch">Switch</option>
+    <img id="image jeux" src="https://i.pinimg.com/originals/3c/ea/64/3cea640f370fdd775ad6962ef0d23aff.jpg" width="300px">
 </select>
 </div>
 <div class="liste_jeux">
