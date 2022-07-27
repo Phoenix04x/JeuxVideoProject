@@ -27,22 +27,23 @@ public class JeuxDB {
 				linkBdd = DriverManager.getConnection(dsn,dbUser,dbPass);
 			}catch(SQLException e) {
 				e.printStackTrace();
-				System.out.println("DB connection kaboom");
+				System.out.println("DB connection went kaboom");
 			}catch(ClassNotFoundException e) {
 				e.printStackTrace();
+				System.out.println("Class not found kaboom");
 			}
 		}
 		return linkBdd;
 	}
 	
-	public static Jeux getJeux() {
+	public static ArrayList<Jeux> getJeux() {
 		
 		linkBdd = getConnection();
 		try {
 			String sql = "SELECT * FROM jeux";
-			Statement jeux = linkBdd.createStatement();
+			Statement getJeuxQuery = linkBdd.createStatement();
 			
-			ResultSet rs = jeux.executeQuery(sql);
+			ResultSet rs = getJeuxQuery.executeQuery(sql);
 			
 			while(!rs.isLast()) {
 				rs.next();
@@ -56,13 +57,14 @@ public class JeuxDB {
 				j.setJeux_PaysOrigine(rs.getString("Jeux_PaysOrigine"));
 				j.setJeux_Connexion(rs.getString("Jeux_Connexion"));
 				j.setJeux_Mode(rs.getString("Jeux_Mode"));
-				((ArrayList<Jeux>) jeux).add(j);
+				jeux.add(j);
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("SQL went Kaboom");
 		}
 		System.out.println(jeux);
-		return (Jeux) linkBdd;
+		return jeux;
 		
 	}
 }
