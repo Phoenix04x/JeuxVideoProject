@@ -1,7 +1,8 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.*;
+import java.util.Date;
 
 public class Jeux implements Serializable{
 	
@@ -9,7 +10,7 @@ public class Jeux implements Serializable{
 	private String Jeux_Titre;
 	private String Jeux_Description;
 	private double Jeux_Prix;
-	private LocalDate Jeux_DateSortie;
+	private Date Jeux_DateSortie;
 	private String Jeux_PaysOrigine;
 	private String Jeux_Connexion;
 	private String Jeux_Mode;
@@ -43,10 +44,10 @@ public class Jeux implements Serializable{
 	public void setJeux_Prix(double jeux_Prix) {
 		Jeux_Prix = jeux_Prix;
 	}
-	public LocalDate getJeux_DateSortie() {
+	public Date getJeux_DateSortie() {
 		return Jeux_DateSortie;
 	}
-	public void setJeux_DateSortie(LocalDate jeux_DateSortie) {
+	public void setJeux_DateSortie(Date jeux_DateSortie) {
 		Jeux_DateSortie = jeux_DateSortie;
 	}
 	public String getJeux_PaysOrigine() {
