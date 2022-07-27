@@ -15,6 +15,7 @@ public class Jeux implements Serializable{
 	private String Jeux_Connexion;
 	private String Jeux_Mode;
 	private int Genre_Id;
+	private boolean actif;
 	/**
 	 * 
 	 */
@@ -75,6 +76,11 @@ public class Jeux implements Serializable{
 		Genre_Id = genre_Id;
 	}
 	
-	
+	public boolean isActif() {
+		return actif;
+	}
+	public void setActif(boolean actif) {
+		this.actif = actif;
+	}
 
 }

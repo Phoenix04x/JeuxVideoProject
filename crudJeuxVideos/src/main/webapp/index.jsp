@@ -31,7 +31,7 @@
                 <option value="Puzzle">Puzzle</option>
                 <option value="Educatif">Educatif</option>
             </select>
-
+<br>
 
             <select name="plateforme" id="plateforme-select">
                 <option value="">--Trier par plateforme--</option>
@@ -49,11 +49,11 @@
             </ul>
         </div>
         <div class="form">
-            <a href="NewJeux.jsp"><button>Ajouter un jeu</button></a>
-            <a href="ModifJeux.jsp"><button>Modifier un jeu</button></a>
-            <a href="NewGenre.jsp"><button>Ajouter un genre</button></a>
-            <a href="ModifGenre.jsp"><button>Modifier un genre</button></a>
-            <a href="NewPlateforme.jsp"><button>Ajouter une plateforme</button></a>
+            <a href="NewJeux.jsp"><button>Ajouter un jeu</button></a><br>
+            <a href="ModifJeux.jsp"><button>Modifier un jeu</button></a><br>
+            <a href="NewGenre.jsp"><button>Ajouter un genre</button></a><br>
+            <a href="ModifGenre.jsp"><button>Modifier un genre</button></a><br>
+            <a href="NewPlateforme.jsp"><button>Ajouter une plateforme</button></a><br>
             <a href="ModifPlateforme.jsp"><button>Modifier une plateforme</button></a>
         </div>
     </div>

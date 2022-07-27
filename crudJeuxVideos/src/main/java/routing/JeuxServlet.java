@@ -25,9 +25,9 @@ public class JeuxServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+	
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.getServletContext().getRequestDispatcher("NewJeux.jsp").forward(request, response);
 	}
 
 	/**
@@ -35,8 +35,8 @@ public class JeuxServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		this.getServletContext().getRequestDispatcher("/WEb-Inf/NewJeux.jsp").forward(request, response);
+		doGet(request, response);
+		
 
 	}
 
