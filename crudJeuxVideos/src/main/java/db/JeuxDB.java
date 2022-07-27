@@ -12,11 +12,11 @@ public class JeuxDB {
 	private static Connection linkBdd;
 	
 	
-	private static String dsn = "jdbc:mysql://localhost:3307/jeuxvideo";
+	private static String dsn = "jdbc:mysql://localhost:3306/jeuxvideo";
 	
-	private static String dbUser = "Sani";
+	private static String dbUser = "Chrisd";
 	
-	private static String dbPass = "13Besiom";
+	private static String dbPass = "ChrisD04!!!!";
 
 
 	public static Connection getConnection() {
