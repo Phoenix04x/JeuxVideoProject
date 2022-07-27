@@ -49,12 +49,12 @@
             </ul>
         </div>
         <div class="form">
-            <a href="NewJeux.jsp"><button>Ajouter un jeu</button></a><br>
-            <a href="ModifJeux.jsp"><button>Modifier un jeu</button></a><br>
-            <a href="NewGenre.jsp"><button>Ajouter un genre</button></a><br>
-            <a href="ModifGenre.jsp"><button>Modifier un genre</button></a><br>
-            <a href="NewPlateforme.jsp"><button>Ajouter une plateforme</button></a><br>
-            <a href="ModifPlateforme.jsp"><button>Modifier une plateforme</button></a>
+            <a href="JeuxServlet"><button>Ajouter un jeu</button></a><br>
+<!--             <a href="GenreServlet"><button>Modifier un jeu</button></a><br> -->
+            <a href="GenreServlet"><button>Ajouter un genre</button></a><br>
+<!--             <a href="ModifGenre.jsp"><button>Modifier un genre</button></a><br> -->
+            <a href="PlateformeServlet"><button>Ajouter une plateforme</button></a><br>
+<!--             <a href="ModifPlateforme.jsp"><button>Modifier une plateforme</button></a> -->
         </div>
     </div>
 </body>

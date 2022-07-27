@@ -17,13 +17,13 @@ import db.Bdd;
 /**
  * Servlet implementation class Newjeux
  */
-public class Newjeux extends HttpServlet {
+public class CreateJeu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Newjeux() {
+    public CreateJeu() {
         super();
         // TODO Auto-generated constructor stub
     }
