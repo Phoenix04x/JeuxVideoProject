@@ -19,4 +19,14 @@
     <servlet-name>JeuxServlet</servlet-name>
     <url-pattern>/JeuxServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Newjeux</display-name>
+    <servlet-name>Newjeux</servlet-name>
+    <servlet-class>routing.Newjeux</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Newjeux</servlet-name>
+    <url-pattern>/Newjeux</url-pattern>
+  </servlet-mapping>
 </web-app>
