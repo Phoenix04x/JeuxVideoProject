@@ -84,9 +84,9 @@ public class Jeux implements Serializable{
 //	}
 	@Override
 	public String toString() {
-		return Jeux_Titre ;//"/nJeux_Description :" + Jeux_Description + "/nJeux_Prix :" + Jeux_Prix
-//				+ "/nJeux_DateSortie :" + Jeux_DateSortie + "/nJeux_PaysOrigine :" + Jeux_PaysOrigine
-//				+ "/nJeux_Connexion :" + Jeux_Connexion + "/nJeux_Mode :" + Jeux_Mode + "/nGenre_Id :" + Genre_Id;
+		return Jeux_Titre + "/nJeux_Description :" + Jeux_Description + "/nJeux_Prix :" + Jeux_Prix
+			+ "/nJeux_DateSortie :" + Jeux_DateSortie + "/nJeux_PaysOrigine :" + Jeux_PaysOrigine
+				+ "/nJeux_Connexion :" + Jeux_Connexion + "/nJeux_Mode :" + Jeux_Mode + "/nGenre_Id :" + Genre_Id;
 	}
 
 }
