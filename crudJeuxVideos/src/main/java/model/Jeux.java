@@ -15,7 +15,7 @@ public class Jeux implements Serializable{
 	private String Jeux_Connexion;
 	private String Jeux_Mode;
 	private int Genre_Id;
-	private boolean actif;
+	//private boolean actif;
 	/**
 	 * 
 	 */
@@ -76,18 +76,17 @@ public class Jeux implements Serializable{
 		Genre_Id = genre_Id;
 	}
 	
-	public boolean isActif() {
-		return actif;
-	}
-	public void setActif(boolean actif) {
-		this.actif = actif;
-	}
+//	public boolean isActif() {
+//		return actif;
+//	}
+//	public void setActif(boolean actif) {
+//		this.actif = actif;
+//	}
 	@Override
 	public String toString() {
-		return "Jeux [Jeux_Titre=" + Jeux_Titre + ", Jeux_Description=" + Jeux_Description + ", Jeux_Prix=" + Jeux_Prix
-				+ ", Jeux_DateSortie=" + Jeux_DateSortie + ", Jeux_PaysOrigine=" + Jeux_PaysOrigine
-				+ ", Jeux_Connexion=" + Jeux_Connexion + ", Jeux_Mode=" + Jeux_Mode + ", Genre_Id=" + Genre_Id
-				+ ", actif=" + actif + "]";
+		return Jeux_Titre ;//"/nJeux_Description :" + Jeux_Description + "/nJeux_Prix :" + Jeux_Prix
+//				+ "/nJeux_DateSortie :" + Jeux_DateSortie + "/nJeux_PaysOrigine :" + Jeux_PaysOrigine
+//				+ "/nJeux_Connexion :" + Jeux_Connexion + "/nJeux_Mode :" + Jeux_Mode + "/nGenre_Id :" + Genre_Id;
 	}
 
 }

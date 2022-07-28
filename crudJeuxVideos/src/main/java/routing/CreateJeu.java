@@ -1,10 +1,5 @@
 package routing;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,6 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import db.Bdd;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class Newjeux
@@ -76,50 +75,61 @@ public class CreateJeu extends HttpServlet {
 								request.setAttribute("error_null", "Champ vide");
 								this.doGet(request, response);
 								
-			}	else if(this.isExistUser(request.getParameter("Jeux_Id"))) {
+			}	else if(this.isExistJeux(request.getParameter("Jeux_Id"))) {
 			request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 			this.doGet(request, response);
 		} 
-			else if(this.isExistUser(request.getParameter("Jeux_Titre"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_Titre"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_Description"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_Description"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_Prix"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_Prix"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_DateSortie"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_DateSortie"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_PaysOrigine"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_PaysOrigine"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_Connexion"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_Connexion"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Jeux_Mode"))) {
+			else if(this.isExistJeux(request.getParameter("Jeux_Mode"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}
-			else if(this.isExistUser(request.getParameter("Genre_Id"))) {
+			else if(this.isExistJeux(request.getParameter("Genre_Id"))) {
 				request.setAttribute("error_repeat", "Nom déjà utilisé sorry");
 				this.doGet(request, response);
 			}else {
-			createUser(request.getParameter("Jeux-Id"),request.getParameter("Jeux_Titre"),request.getParameter("Jeux_DateSortie"),request.getParameter("Jeux_PaysOrigine"),request.getParameter("Jeux_Connexion"),request.getParameter("Jeux_Mode"),request.getParameter("Genre_Id"));
+			createJeux(request.getParameter("Jeux-Id"),request.getParameter("Jeux_Titre"),request.getParameter("Jeux_DateSortie"),request.getParameter("Jeux_PaysOrigine"),request.getParameter("Jeux_Connexion"),request.getParameter("Jeux_Mode"),request.getParameter("Genre_Id"));
 			this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		}
 		
 		
 	}
 	
-	protected boolean isExistUser(int Jeux_Id, String Jeux_Titre, String Jeux_Description,double Jeux_Prix, Date Jeux_DateSortie, String Jeux_PaysOrigine, String Jeux_Connexion, String Jeux_Mode, int Genre_Id) {
+	private void createJeux(String parameter, String parameter2, String parameter3, String parameter4,
+			String parameter5, String parameter6, String parameter7) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private boolean isExistJeux(String parameter) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	protected boolean isExistJeux(int Jeux_Id, String Jeux_Titre, String Jeux_Description,double Jeux_Prix, Date Jeux_DateSortie, String Jeux_PaysOrigine, String Jeux_Connexion, String Jeux_Mode, int Genre_Id) {
 		Connection dbc = Bdd.getConnection();
 		try {
 			PreparedStatement ps = dbc.prepareStatement("SELECT * FROM jeux WHERE Jeux-Id=? AND Jeux-Titre=? AND Jeux_DateSortie=? AND Jeux_PaysOrigine=? AND Jeux_Connexion=? AND Jeux_Mode=? AND Genre_Id=?");
@@ -149,7 +159,7 @@ public class CreateJeu extends HttpServlet {
 		}
 		
 	}
-	protected boolean createUser(int Jeux_Id, String Jeux_Titre, String Jeux_Description,double Jeux_Prix, Date Jeux_DateSortie, String Jeux_PaysOrigine, String Jeux_Connexion, String Jeux_Mode, int Genre_Id) {
+	protected boolean createJeux(int Jeux_Id, String Jeux_Titre, String Jeux_Description,double Jeux_Prix, Date Jeux_DateSortie, String Jeux_PaysOrigine, String Jeux_Connexion, String Jeux_Mode, int Genre_Id) {
 		Connection dbc = Bdd.getConnection();
 		try {
 			PreparedStatement ps = dbc.prepareStatement("INSERT INTO jeux(Jeux_Id, Jeux_Titre, Jeux_Description, Jeux_Prix, Jeux_DateSortie, Jeux_PaysOrigine, Jeux_Connexion, Jeux_Mode, Genre_Id) VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?)");

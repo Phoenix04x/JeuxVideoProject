@@ -34,7 +34,9 @@ public class JeuxServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(req:uest.getContextPath());
 		ArrayList<Jeux> jeux = JeuxDB.getJeux();
 		request.setAttribute("data", jeux);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/NewJeux.jsp").forward(request, response);
+		System.out.println(jeux);
+		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		//this.getServletContext().getRequestDispatcher("/WEB-INF/NewJeux.jsp").forward(request, response);
 	}
 
 	/**
@@ -42,7 +44,9 @@ public class JeuxServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/NewJeux.jsp").forward(request, response);
+
 		
 
 	}

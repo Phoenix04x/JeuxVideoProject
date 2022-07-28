@@ -3,6 +3,8 @@ package db;
 import java.sql.*;
 import java.util.ArrayList;
 
+//import com.csm.enrici.model.User;
+
 import model.Jeux;
 
 public class JeuxDB {
@@ -23,7 +25,7 @@ public class JeuxDB {
 		
 		if (linkBdd == null) {
 			try {
-				Class.forName("com.mysql.cj.jbdc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				linkBdd = DriverManager.getConnection(dsn,dbUser,dbPass);
 			}catch(SQLException e) {
 				e.printStackTrace();
@@ -38,17 +40,48 @@ public class JeuxDB {
 	}
 	
 	public static ArrayList<Jeux> getJeux() {
-		
+//		
+//		linkBdd = getConnection();
+//		try {
+//			String sql = "SELECT * FROM jeux";
+//			Statement getJeuxQuery = linkBdd.createStatement();
+//			
+//			ResultSet rs = getJeuxQuery.executeQuery(sql);
+//			
+//			while(!rs.isLast()) {
+//				rs.next();
+//				
+//				Jeux j = new Jeux();
+//				j.setJeux_Id(rs.getInt("Jeux_Id"));
+//				j.setJeux_Titre(rs.getString("Jeux_Titre"));
+//				j.setJeux_Description(rs.getString("Jeux_Description"));
+//				j.setJeux_Prix(rs.getInt("Jeux_Prix"));
+//				j.setJeux_DateSortie(rs.getDate("Jeux_DateSortie"));
+//				j.setJeux_PaysOrigine(rs.getString("Jeux_PaysOrigine"));
+//				j.setJeux_Connexion(rs.getString("Jeux_Connexion"));
+//				j.setJeux_Mode(rs.getString("Jeux_Mode"));
+//				j.setJeux_Mode(rs.getString("Genre_id"));
+//				jeux.add(j);
+//			}
+//		}catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println(jeux);
+//		return jeux;
+//		
 		linkBdd = getConnection();
 		try {
+			
 			String sql = "SELECT * FROM jeux";
-			Statement getJeuxQuery = linkBdd.createStatement();
 			
+			//on crée une requête préparée
+			PreparedStatement getJeuxQuery = linkBdd.prepareStatement(sql);
+			//on exécute la requête préparée
 			ResultSet rs = getJeuxQuery.executeQuery(sql);
-			
+			//si on a trouvé notre utilisateur
 			while(!rs.isLast()) {
 				rs.next();
-				
+				//on crée un objet Jeux, on le stock dans une liste et on renvoie la liste
 				Jeux j = new Jeux();
 				j.setJeux_Id(rs.getInt("Jeux_Id"));
 				j.setJeux_Titre(rs.getString("Jeux_Titre"));
@@ -58,12 +91,17 @@ public class JeuxDB {
 				j.setJeux_PaysOrigine(rs.getString("Jeux_PaysOrigine"));
 				j.setJeux_Connexion(rs.getString("Jeux_Connexion"));
 				j.setJeux_Mode(rs.getString("Jeux_Mode"));
+				j.setJeux_Mode(rs.getString("Genre_id"));
 				jeux.add(j);
+			
+
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		System.out.println(jeux);
+		//System.out.println(jeux);
 		return jeux;
 		
     }

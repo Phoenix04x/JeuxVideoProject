@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 
 <head>
@@ -42,10 +43,10 @@
             </select>
         </div>
         <div class="liste_jeux">
-            <c:forEach items="${data}" var="jeux">
+            <c:forEach items="${data}" var="jeu">
                 <tr>
-                    <td>Jeux :
-                        <c:out value="${jeux}" />
+                    <td>
+                        <c:out value="${jeu}" /><br>
                     </td>
                 </tr>
             </c:forEach>
