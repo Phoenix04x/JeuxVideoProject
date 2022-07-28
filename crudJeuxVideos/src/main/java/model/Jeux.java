@@ -75,6 +75,12 @@ public class Jeux implements Serializable{
 	public void setGenre_Id(int genre_Id) {
 		Genre_Id = genre_Id;
 	}
+	@Override
+	public String toString() {
+		return "Jeux [Jeux_Connexion=" + Jeux_Connexion + ", Jeux_DateSortie=" + Jeux_DateSortie + ", Jeux_Description="
+				+ Jeux_Description + ", Jeux_Id=" + Jeux_Id + ", Jeux_Mode=" + Jeux_Mode + ", Jeux_PaysOrigine="
+				+ Jeux_PaysOrigine + ", Jeux_Prix=" + Jeux_Prix + ", Jeux_Titre=" + Jeux_Titre + "]";
+	}
 	
 //	public boolean isActif() {
 //		return actif;

@@ -43,10 +43,17 @@
             </select>
         </div>
         <div class="liste_jeux">
+<<<<<<< HEAD
             <c:forEach items="${data}" var="jeu">
                 <tr>
                     <td>
                         <c:out value="${jeu}" /><br>
+=======
+            <c:forEach items="${data}" var="jeux">
+                <tr>
+                    <td>Jeux :
+                        <c:out value="${jeux}" />
+>>>>>>> refs/remotes/origin/master
                     </td>
                 </tr>
             </c:forEach>

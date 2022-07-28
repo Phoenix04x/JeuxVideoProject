@@ -30,13 +30,27 @@ public class JeuxServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 	
 		//response.getWriter().append("Served at: ").append(req:uest.getContextPath());
 		ArrayList<Jeux> jeux = JeuxDB.getJeux();
 		request.setAttribute("data", jeux);
 		System.out.println(jeux);
+=======
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ArrayList<Jeux> jeux = JeuxDB.getJeux();
+		System.out.println("J'ai des Jeux: " + jeux.size());
+
+		request.setAttribute("data", jeux);
+>>>>>>> refs/remotes/origin/master
 		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+<<<<<<< HEAD
 		//this.getServletContext().getRequestDispatcher("/WEB-INF/NewJeux.jsp").forward(request, response);
+=======
+		
+		
+>>>>>>> refs/remotes/origin/master
 	}
 
 	/**
